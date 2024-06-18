@@ -6,17 +6,10 @@ import { useState } from 'react';
 import Header from '../../../components/Header';
 import Cake from '../../../components/Cake';
 import Balloons from '../../../components/Balloons';
-import ModalLetter from '../../../components/ModalLetter'; // Sesuaikan path dengan struktur proyek Anda
 
 const Birthday = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const handleLetterClick = () => {
+    window.location.href = 'https://metultah.vercel.app/';
   };
 
   return (
@@ -35,9 +28,8 @@ const Birthday = () => {
           src="/letter.png"
           alt="Surat Ulang Tahun"
           className="cursor-pointer w-24 h-auto"
-          onClick={openModal}
+          onClick={handleLetterClick}
         />
-        {isModalOpen && <ModalLetter onClose={closeModal} />} {/* Tampilkan modal jika isModalOpen true */}
       </main>
       <style jsx>{`
         .background-container {
